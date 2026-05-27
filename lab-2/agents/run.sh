@@ -1,2 +1,2 @@
 #!/bin/bash
-kubectl apply -f first-agent.yaml -n kagent
+kubectl apply -f ./lab-2/agents/first-agent.yaml -n kagent

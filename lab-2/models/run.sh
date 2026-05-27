@@ -1,5 +1,5 @@
 #!/bin/bash
-kubectl apply -f modelconfig.yaml -n kagent
+kubectl apply -f ./lab-2/models/modelconfig.yaml -n kagent
 docker run -d --name ollama --gpus all \
   -p 11434:11434 \
   -v ollama_data:/root/.ollama \
