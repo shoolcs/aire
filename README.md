@@ -12,7 +12,9 @@ The cluster and base stack are provisioned in the companion repo **[abox](https:
 | Path                        | Description                                         |
 | --------------------------- | --------------------------------------------------- |
 | `[lab-2/](lab-2/README.md)` | Lab 2: local model (Ollama), kagent, Kubernetes MCP |
+| `[lab-4/](lab-4/README.md)` | Lab 4: agent inventory, MCP governance, Qdrant      |
 | `run.sh`                    | Run Lab 2 (model + agent) from the repo root        |
+| `lab-4/run.sh`              | Run Lab 4 (inventory + governance + Qdrant)         |
 
 
 New labs are added as `lab-N/` directories, each with its own `README.md`.
@@ -38,12 +40,17 @@ Remote access: SSH tunnel to the API port + kubeconfig with `server: https://127
 | Lab       | Topic                                              | Documentation                      |
 | --------- | -------------------------------------------------- | ---------------------------------- |
 | **Lab 2** | Ollama + ModelConfig + declarative Agent + K8s MCP | [lab-2/README.md](lab-2/README.md) |
+| **Lab 4** | Agent inventory + MCP governance + Qdrant          | [lab-4/README.md](lab-4/README.md) |
 
 
-Quick start for Lab 2 (after abox is up):
+Quick start (after abox is up):
 
 ```bash
+# Lab 2
 bash run.sh
+
+# Lab 4
+bash lab-4/run.sh
 ```
 
 ---

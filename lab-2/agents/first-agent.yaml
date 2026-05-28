@@ -33,5 +33,22 @@ spec:
         - k8s_describe_resource
         - k8s_check_service_connectivity
       type: McpServer
-  description: "First agent."
+    a2aConfig:
+      skills:
+        - id: k8s-cluster-insights
+          name: Kubernetes cluster insights
+          description: Inspect cluster resources, configuration, and connectivity using Kubernetes MCP tools.
+          tags:
+            - k8s
+            - cluster
+            - diagnostics
+          inputModes:
+            - text
+          outputModes:
+            - text
+          examples:
+            - "List pods in the kagent namespace"
+            - "Describe the agentgateway-external Gateway"
+            - "Check connectivity to a service in kagent"
+  description: "First agent with A2A Agent Card (K8s MCP tools)."
   type: Declarative
