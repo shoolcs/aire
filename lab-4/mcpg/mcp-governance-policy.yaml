@@ -1,0 +1,77 @@
+apiVersion: governance.mcp.io/v1alpha1
+kind: MCPGovernancePolicy
+metadata:
+  name: enterprise-mcp-policy
+  namespace: mcp-governance
+spec:
+  aiAgent:
+    enabled: true
+    model: qwen2.5:7b
+    ollamaEndpoint: http://192.168.88.32:11434
+    provider: ollama
+    scanEnabled: true
+    scanInterval: 5m
+  enableAuditLogging: false
+  excludeNamespaces:
+  - kube-system
+  - kube-public
+  - kube-node-lease
+  - local-path-storage
+  maxToolsCritical: 15
+  maxToolsWarning: 10
+  requireAgentGateway: true
+  requireCORS: true
+  requireHardenedDeployment: true
+  requireJWTAuth: true
+  requirePromptGuard: true
+  requireRBAC: true
+  requireRateLimit: true
+  requireTLS: true
+  scanInterval: 5m
+  scoringWeights:
+    agentGatewayIntegration: 25
+    authentication: 20
+    authorization: 15
+    corsPolicy: 10
+    hardenedDeployment: 15
+    promptGuard: 5
+    rateLimit: 5
+    tlsEncryption: 10
+    toolScope: 10
+  severityPenalties:
+    critical: 40
+    high: 25
+    low: 5
+    medium: 15
+  skillGovernance:
+    allowedExternalDomains:
+    - api.github.com
+    - api.gitlab.com
+    enabled: true
+    failOnPrivilegeEscalation: true
+    failOnPromptInjection: true
+    githubToken: ""
+    requireSafetyGuardrails:
+    - database
+    - infra
+    - admin
+    scanCacheTTLMinutes: 60
+    scanRepoContent: true
+  targetNamespaces: []
+  verifiedCatalogScoring:
+    checkMaxScores:
+      DEP-001: 5
+      DEP-002: 10
+      DEP-003: 5
+      PUB-001: 10
+      PUB-002: 10
+      PUB-003: 10
+      SEC-001: 15
+      SEC-002: 10
+      TOOL-001: 15
+      USE-001: 10
+    complianceWeight: 20
+    securityWeight: 50
+    trustWeight: 30
+    unverifiedThreshold: 50
+    verifiedThreshold: 70
