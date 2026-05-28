@@ -1,4 +1,4 @@
-# AI infrastructure research)
+# AI infrastructure research
 
 ## Goals
 
